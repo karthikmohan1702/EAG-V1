@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenAI Beacon</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Inline critical styles to ensure they apply */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 380px;
+      padding: 16px;
+    }
+    h1 {
+      color: #6d28d9;
+      background: linear-gradient(90deg, #6d28d9, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .fetching-message {
+      background-color: #f5f3ff;
+      color: #6d28d9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .article-card {
+      background-color: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .admin-tools {
+      margin-top: 12px;
+      padding: 10px;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+    .admin-tools button {
+      background-color: #6d28d9;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>GenAI Beacon</h1>
+      <div class="header-actions">
+        <button id="refreshBtn" title="Refresh content">
+          <img src="icons/refresh.svg" alt="Refresh">
+        </button>
+      </div>
+    </header>
+    
+    <div class="filters">
+      <div class="filter-group">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="LLMs">LLMs</option>
+          <option value="Research">Research</option>
+          <option value="Product">Product Updates</option>
+          <option value="Ethics">Ethics</option>
+          <option value="Multimodal">Multimodal</option>
+          <option value="Tools">Tools</option>
+          <option value="Business">Business</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="sourceFilter">Source</label>
+        <select id="sourceFilter">
+          <option value="all">All Sources</option>
+          <!-- Dynamically populated from available sources -->
+        </select>
+      </div>
+    </div>
+    
+    <div id="lastUpdated" class="last-updated">
+      Last updated: <span id="lastUpdatedTime">Never</span>
+    </div>
+    
+    <div id="fetchingMessage" class="fetching-message">
+      <span class="pulse-dot"></span>
+      Fetching latest GenAI news...
+    </div>
+    
+    <div id="loadingIndicator" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Fetching latest GenAI news...</p>
+    </div>
+    
+    <div id="articlesContainer" class="articles">
+      <!-- Articles will be populated here -->
+    </div>
+    
+    <div id="noArticles" class="no-articles hidden">
+      <p>No articles found. Try refreshing or adjusting your source settings.</p>
+      <button id="refreshBtnEmpty">Refresh Now</button>
+    </div>
+    
+    <!-- Admin Tools Section -->
+    <div class="admin-tools">
+      <p>Admin Tools:</p>
+      <button id="resetSourcesBtn">Reset Sources</button>
+    </div>
+  </div>
+  
+  <template id="articleTemplate">
+    <div class="article-card">
+      <div class="article-header">
+        <span class="article-source"></span>
+        <span class="article-date"></span>
+      </div>
+      <h2 class="article-title"></h2>
+      <div class="article-tags">
+        <span class="article-category"></span>
+        <span class="article-significance"></span>
+      </div>
+      <p class="article-summary"></p>
+      <div class="article-insights">
+        <h3>Key Insights:</h3>
+        <ul class="insights-list"></ul>
+      </div>
+      <div class="article-actions">
+        <button class="read-more-btn">Read Original</button>
+        <button class="save-btn">Bookmark</button>
+      </div>
+    </div>
+  </template>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

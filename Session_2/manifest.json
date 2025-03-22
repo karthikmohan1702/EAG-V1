@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "GenAI Beacon",
+  "version": "1.0.1",
+  "description": "Stay informed about the latest developments in Generative AI with Gemini-powered insights",
+  "permissions": [
+    "storage",
+    "alarms",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.anthropic.com/*",
+    "https://openai.com/*",
+    "https://huggingface.co/*",
+    "https://www.deepmind.google/*",
+    "https://arxiv.org/*",
+    "https://ai.google/*",
+    "https://ai.meta.com/*",
+    "https://stability.ai/*",
+    "https://txt.cohere.com/*",
+    "https://blogs.nvidia.com/*",
+    "https://docs.midjourney.com/*",
+    "https://www.microsoft.com/en-us/research/*",
+    "https://research.ibm.com/*",
+    "https://distill.pub/*",
+    "https://www.alignmentforum.org/*",
+    "https://www.lesswrong.com/*",
+    "https://wandb.ai/*",
+    "https://replicate.com/*",
+    "https://news.mit.edu/*",
+    "https://venturebeat.com/*",
+    "https://techcrunch.com/*",
+    "https://jack-clark.net/*",
+    "https://the-decoder.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "options.html"
+}
