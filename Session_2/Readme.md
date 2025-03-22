@@ -37,41 +37,45 @@ GenAI Beacon is a Chrome extension that helps you stay informed about the latest
    - Go to API keys in your account settings
    - Create a new API key
 
-### Content Sources
+## Content Sources
 The extension monitors content from the following categories:
 
-**Research Labs**
-- Anthropic
-- OpenAI
-- Google DeepMind
-- Google AI
-- Meta AI
-- Stability AI
-- Cohere
-- NVIDIA AI
-- Midjourney
-- Microsoft Research
-- IBM Research
+Here are all the URLs that are embedded in the GenAI Beacon extension scripts:
 
-**Academic Publications**
-- ArXiv (GenAI)
-- ArXiv (LLMs)
-- ArXiv (Multimodal)
-- Distill.pub
+### Research Labs
+- Anthropic: https://www.anthropic.com/blog
+- OpenAI: https://openai.com/blog
+- Google DeepMind: https://www.deepmind.google/blog/
+- Google AI: https://ai.google/
+- Meta AI: https://ai.meta.com/blog/
+- Stability AI: https://stability.ai/blog
+- Cohere: https://txt.cohere.com/
+- NVIDIA AI: https://blogs.nvidia.com/blog/category/deep-learning/
+- Midjourney: https://docs.midjourney.com/changelog
+- Microsoft Research: https://www.microsoft.com/en-us/research/blog/category/artificial-intelligence/
+- IBM Research: https://research.ibm.com/blog/ai
 
-**Community Content**
-- Hugging Face
-- AI Alignment Forum
-- LessWrong (AI)
-- Weights & Biases
-- Replicate
+### Academic
+- ArXiv (GenAI): https://arxiv.org/search/?query=generative+AI&searchtype=all
+- ArXiv (LLMs): https://arxiv.org/search/?query=large+language+model&searchtype=all
+- ArXiv (Multimodal): https://arxiv.org/search/?query=multimodal+AI&searchtype=all
+- Distill.pub: https://distill.pub/
 
-**Industry News**
-- MIT AI News
-- VentureBeat AI
-- TechCrunch AI
-- Import AI Newsletter
-- The Decoder
+### Community
+- Hugging Face: https://huggingface.co/blog
+- AI Alignment Forum: https://www.alignmentforum.org/
+- LessWrong (AI): https://www.lesswrong.com/topics/artificial-intelligence
+- Weights & Biases: https://wandb.ai/fully-connected
+- Replicate: https://replicate.com/blog
+
+### Industry News
+- MIT AI News: https://news.mit.edu/topic/artificial-intelligence2
+- VentureBeat AI: https://venturebeat.com/category/ai/
+- TechCrunch AI: https://techcrunch.com/category/artificial-intelligence/
+- Import AI Newsletter: https://jack-clark.net/
+- The Decoder: https://the-decoder.com/
+
+These URLs are used in the SOURCES object in background.js and determine which websites are scraped for content by the extension.
 
 ### Customizing Sources
 1. In the extension settings, navigate to the "Content Sources" section
@@ -96,7 +100,7 @@ The extension monitors content from the following categories:
 ## File Structure
 
 ```
-genai-beacon/
+Session_2/
 ├── manifest.json        # Extension manifest
 ├── background.js        # Background service worker
 ├── content-scrapers.js  # Content scraping functions
