@@ -1,7 +1,7 @@
 // Configuration
-const TELEGRAM_BOT_TOKEN = "7551031759:AAFRBljn3nvmxcCIB6_7EdWQ8WJMewn5z7E";
-const TELEGRAM_CHAT_ID = "1011367949";
-const GEMINI_API_KEY = "AIzaSyAizctfr0NvoU0ZE-DgQWr6ndBau1OCz7g";
+const TELEGRAM_BOT_TOKEN = "****";
+const TELEGRAM_CHAT_ID = "****";
+const GEMINI_API_KEY = "****";
 
 // Store conversation history
 let conversationHistory = [];
