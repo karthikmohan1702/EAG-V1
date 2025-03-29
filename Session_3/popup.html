@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitcoin Price Analyzer</title>
+  <style>
+    body {
+      width: 600px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .price-display {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #1976D2;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    .success {
+      background-color: #E8F5E9;
+      color: #2E7D32;
+    }
+    .error {
+      background-color: #FFEBEE;
+      color: #C62828;
+    }
+    .analysis-result {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .telegram-prompt {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #E3F2FD;
+      border-radius: 8px;
+      display: none;
+      text-align: center;
+    }
+    /* Analysis Specific Styles */
+    .analysis-container {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2c3e50;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3498db;
+    }
+    .section-header {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 20px 0 10px 0;
+      padding: 8px;
+      background: #e9ecef;
+      border-radius: 4px;
+    }
+    .bullet-list {
+      list-style-type: none;
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    .bullet-list li {
+      position: relative;
+      padding: 5px 0 5px 25px;
+      line-height: 1.5;
+    }
+    .bullet-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #3498db;
+      font-weight: bold;
+    }
+    .content {
+      line-height: 1.6;
+      color: #34495e;
+      margin: 10px 0;
+      padding: 0 10px;
+    }
+    .separator {
+      border-top: 1px solid #dee2e6;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Bitcoin Price Analyzer</h2>
+    
+    <div class="price-display" id="currentPrice">
+      Loading...
+    </div>
+
+    <div class="input-group">
+      <label for="query">What would you like to know about Bitcoin?</label>
+      <input type="text" id="query" placeholder="e.g., What's the current price trend? Should I buy now?">
+    </div>
+
+    <button id="analyze">Analyze</button>
+
+    <div id="analysisResult" class="analysis-result"></div>
+    
+    <div id="telegramPrompt" class="telegram-prompt">
+      <p>Would you like to receive this analysis on Telegram?</p>
+      <button id="sendToTelegram">Send to Telegram</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
