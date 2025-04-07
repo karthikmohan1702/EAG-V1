@@ -1,0 +1,2 @@
+Store the key in .env file
+GEMINI_API_KEY=
