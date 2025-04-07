@@ -132,6 +132,9 @@ Ensure you have completed the Configuration and Coordinate Finding steps if nece
 
 The script will start the `custom_server.py` process, connect to it, interact with the LLM, and attempt to automate Paint as described. Watch the console output for progress and potential errors.
 
+## Video
+https://github.com/user-attachments/assets/e27b08ff-c406-4955-8f27-8392cf0fea00
+
 ## Notes
 
 *   UI automation can be sensitive to timing and screen layout changes.
