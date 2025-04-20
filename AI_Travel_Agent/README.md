@@ -23,9 +23,7 @@ This project's value lies in illustrating *how* AI agents are built. Its primary
     * Converting output to a downloadable PDF (`src/app.py` using `fpdf2`).
     * Sending results via a Telegram bot (`src/app.py` using `requests`).
     * Connecting to external tools (like Gmail) using standards like the Model-Context Protocol (`src/gmail_mcp_server/`).
-
-![core_components](https://github.com/user-attachments/assets/464a8465-e33f-4edb-aa0d-9265aaebc37d)
-
+![architecture](https://github.com/user-attachments/assets/152f6513-e40d-4105-ab77-b7aabdfbf36d)
 
 ## Features
 
@@ -37,8 +35,39 @@ This project's value lies in illustrating *how* AI agents are built. Its primary
 * **Telegram Integration:** Can send the itinerary PDF to a configured Telegram chat.
 * **Gmail Integration (via MCP):** Uses the Model-Context Protocol (MCP) to interact with a Gmail account for sending the itinerary via email.
 
-
 ![core_components_1](https://github.com/user-attachments/assets/d9b8b3a0-84fb-4eaa-b63b-431161e48a71)
+
+## Core Components: Why Separate Files?
+![core_components](https://github.com/user-attachments/assets/464a8465-e33f-4edb-aa0d-9265aaebc37d)
+
+The application is intentionally structured into several Python files. Let's look at the key ones to understand the "why" and "what" of this modular approach:
+
+* **`config.py`**
+    * **Why:** To centralize setup and sensitive information (like API keys).
+    * **What it Achieves:** Keeps configuration separate from logic, making it easier to manage keys and settings without digging through application code. Promotes security and easier deployment across different environments.
+
+* **`perception.py`**
+    * **Why:** To handle how the agent gathers information about the user and the world.
+    * **What it Achieves:** Isolates the input-gathering process. Whether it's through a command line (`perception.py`) or a UI form (like in `app.py`), this module defines what information is needed (`UserPreferences` model) and how it's collected initially.
+
+* **`memory.py`**
+    * **Why:** To give the agent persistence and context by storing and retrieving past information.
+    * **What it Achieves:** Separates the mechanism for remembering user details (like preferences). This could be simple in-memory storage (as used in `memory.py`) or adapted to Streamlit's session state (`app.py`), but the rest of the agent interacts with it through a consistent interface (`store_user_preferences`, `get_user_preferences`).
+
+* **`decision_making.py`**
+    * **Why:** To encapsulate the core "thinking" part of the agent – interacting with the AI model.
+    * **What it Achieves:** Focuses solely on constructing the prompt, calling the generative AI, and processing/validating the AI's response into a structured format (`Itinerary` model). This makes it easier to swap AI models or update prompting strategies without affecting other parts like perception or action.
+
+* **`action.py`**
+    * **Why:** To define how the agent presents its results or takes final actions based on the decision.
+    * **What it Achieves:** Isolates the output presentation logic. In the command-line version, this module formats and prints the itinerary. Separating this allows changing how results are displayed (console, UI, API response) without altering the decision-making core.
+
+* **`main.py`**
+    * **Why:** To orchestrate the overall workflow for the command-line version of the agent.
+    * **What it Achieves:** Acts as the entry point and controller for the non-UI version, calling functions from perception, memory, decision-making, and action in the correct sequence to run one cycle of the agent's operation. This clearly shows the agentic loop in a procedural way.
+
+This separation makes the codebase cleaner, easier to test, maintain, and extend.
+
 
 
 ## Technology Stack
