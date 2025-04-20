@@ -2,6 +2,8 @@
 
 ## Video
 
+https://youtu.be/c1oPvDx6ib8 
+
 ## Overview
 
 This project breaks down a basic Python AI Travel Agent bot. It's designed not as a full-fledged travel planner, but as a **clear, simple learning exercise** to reveal the core concepts behind agentic AI systems.
