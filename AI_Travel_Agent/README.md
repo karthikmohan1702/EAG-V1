@@ -24,6 +24,9 @@ This project's value lies in illustrating *how* AI agents are built. Its primary
     * Sending results via a Telegram bot (`src/app.py` using `requests`).
     * Connecting to external tools (like Gmail) using standards like the Model-Context Protocol (`src/gmail_mcp_server/`).
 
+![core_components](https://github.com/user-attachments/assets/464a8465-e33f-4edb-aa0d-9265aaebc37d)
+
+
 ## Features
 
 * **AI Itinerary Generation:** Uses Google Gemini to create personalized travel suggestions based on user preferences.
@@ -33,6 +36,10 @@ This project's value lies in illustrating *how* AI agents are built. Its primary
 * **PDF Export:** Allows users to download the generated itinerary as a PDF file.
 * **Telegram Integration:** Can send the itinerary PDF to a configured Telegram chat.
 * **Gmail Integration (via MCP):** Uses the Model-Context Protocol (MCP) to interact with a Gmail account for sending the itinerary via email.
+
+
+![core_components_1](https://github.com/user-attachments/assets/d9b8b3a0-84fb-4eaa-b63b-431161e48a71)
+
 
 ## Technology Stack
 
