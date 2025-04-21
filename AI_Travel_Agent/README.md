@@ -23,7 +23,8 @@ This project's value lies in illustrating *how* AI agents are built. Its primary
     * Converting output to a downloadable PDF (`src/app.py` using `fpdf2`).
     * Sending results via a Telegram bot (`src/app.py` using `requests`).
     * Connecting to external tools (like Gmail) using standards like the Model-Context Protocol (`src/gmail_mcp_server/`).
-![architecture](https://github.com/user-attachments/assets/152f6513-e40d-4105-ab77-b7aabdfbf36d)
+![architecture](https://github.com/user-attachments/assets/3e3665b1-80b4-4dba-9874-962d9e6680ec)
+
 
 ## Features
 
@@ -35,10 +36,11 @@ This project's value lies in illustrating *how* AI agents are built. Its primary
 * **Telegram Integration:** Can send the itinerary PDF to a configured Telegram chat.
 * **Gmail Integration (via MCP):** Uses the Model-Context Protocol (MCP) to interact with a Gmail account for sending the itinerary via email.
 
-![core_components_1](https://github.com/user-attachments/assets/d9b8b3a0-84fb-4eaa-b63b-431161e48a71)
+![core_components_1](https://github.com/user-attachments/assets/b1b7c562-e79a-48ad-b2b7-e5c546047056)
 
 ## Core Components: Why Separate Files?
-![core_components](https://github.com/user-attachments/assets/464a8465-e33f-4edb-aa0d-9265aaebc37d)
+![core_components](https://github.com/user-attachments/assets/36f43e33-7c0d-4bce-9a22-aaae2d256c29)
+
 
 The application is intentionally structured into several Python files. Let's look at the key ones to understand the "why" and "what" of this modular approach:
 
